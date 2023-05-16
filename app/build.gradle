@@ -8,7 +8,11 @@ properties.load(project.rootProject.file('local.properties').newDataInputStream(
 android {
     namespace 'com.sopt.carrot'
     compileSdk 33
-
+    
+    buildFeatures {
+    	dataBinding true
+    }
+    
     defaultConfig {
         applicationId "com.sopt.carrot"
         minSdk 28
