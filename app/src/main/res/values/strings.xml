@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Carrot</string>
+    <string name="profile_tile">먼저 알바 프로필을\n만들어 주세요</string>
+    <string name="profile_subTitle">원하는 알바에 언제든 지원 할 수 있어요.</string>
+    <string name="profile_name">이름</string>
+    <string name="profile_noPrimary">(선택)</string>
+    <string name="profile_nameHint">당근이</string>
+    <string name="profile_number">연락처</string>
+    <string name="profile_numberDetail">전화번호는 안심번호로 표시돼요.</string>
+    <string name="profile_numberHint">01012345678</string>
+    <string name="profile_gender">성별</string>
+    <string name="profile_man">남자</string>
+    <string name="profile_woman">여자</string>
+    <string name="profile_birth">태어난 연도</string>
+    <string name="profile_brithDetail">태어난 연도를 숫자 4자리로 입력해주세요. 알바 프로필에는 나이대로 표시돼요. 예) 30대, 40대 등 </string>
+    <string name="profile_birthHint">2023</string>
+    <string name="profile_carrier">경력</string>
+    <string name="profile_careerRegister">경력/경험 등록</string>
+    <string name="profile_coverLetter">자기소개</string>
+    <string name="profile_coverLetterHint">본인이 일햇던 경험과 할 수 있는 업무에 대해 소개해주세요.</string>
+    <string name="profile_agreePrivacy1">(필수) 개인정보 수집 및 이용 동의 </string>
+    <string name="profile_agreePrivacy2">(필수) 개인정보 제 3자 제공 동의</string>
+    <string name="profile_agreeAndApply">동의하고 지원하기</string>
 </resources>
