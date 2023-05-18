@@ -16,8 +16,8 @@
     <string name="profile_birthHint">2023</string>
     <string name="profile_carrier">경력</string>
     <string name="profile_careerRegister">경력/경험 등록</string>
-    <string name="profile_coverLetter">자기소개</string>
-    <string name="profile_coverLetterHint">본인이 일햇던 경험과 할 수 있는 업무에 대해 소개해주세요.</string>
+    <string name="profile_introduction">자기소개</string>
+    <string name="profile_introductionHint">본인이 일햇던 경험과 할 수 있는 업무에 대해 소개해주세요.</string>
     <string name="profile_agreePrivacy1">(필수) 개인정보 수집 및 이용 동의 </string>
     <string name="profile_agreePrivacy2">(필수) 개인정보 제 3자 제공 동의</string>
     <string name="profile_agreeAndApply">동의하고 지원하기</string>
