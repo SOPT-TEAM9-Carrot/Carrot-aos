@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- selector가 눌렸을때 main 주황색-->
+    <item android:state_selected="true">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle">
+            <solid android:color="@color/color_main1" />
+            <corners android:radius="6dp" />
+        </shape>
+    </item>
+    <!-- selector가 눌리지 않았을때 회색-->
+    <item android:state_selected="false">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle">
+            <solid android:color="@color/color_sub_gray7"/>
+            <corners android:radius="6dp"/>
+        </shape>
+    </item>
+</selector>
