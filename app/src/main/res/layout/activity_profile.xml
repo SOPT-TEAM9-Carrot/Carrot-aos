@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,27 +9,20 @@
     android:background="@color/color_sub_gray7"
     tools:context=".presentation.profile.ProfileActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/layout_profile_header"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white">
 
         <ImageButton
             android:id="@+id/btn_profile_stopProfile"
-            android:layout_width="24dp"
-            android:layout_height="23dp"
-            android:layout_marginVertical="17dp"
-            android:layout_marginStart="22dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_profile_x" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="12dp"
+            android:src="@drawable/ic_profile_x" />
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/layout_profile_body"
@@ -180,12 +175,12 @@
                 app:layout_constraintStart_toStartOf="@id/tv_profile_title"
                 app:layout_constraintTop_toBottomOf="@id/et_profile_number" />
 
-            <android.widget.Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_profile_man"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_marginTop="4dp"
-                android:background="@drawable/radius_profile_btn"
+                android:background="@drawable/selc_btn_gender"
                 android:fontFamily="@font/notosans_medium"
                 android:text="@string/profile_man"
                 android:textColor="@color/color_sub_gray3"
@@ -194,12 +189,12 @@
                 app:layout_constraintStart_toStartOf="@id/tv_profile_title"
                 app:layout_constraintTop_toBottomOf="@id/tv_profile_gender" />
 
-            <android.widget.Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_profile_woman"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_marginLeft="4dp"
-                android:background="@drawable/radius_profile_btn"
+                android:background="@drawable/selc_btn_gender"
                 android:fontFamily="@font/notosans_medium"
                 android:text="@string/profile_woman"
                 android:textColor="@color/color_sub_gray3"
