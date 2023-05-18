@@ -1,6 +1,10 @@
 package com.sopt.carrot.presentation.profile
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -12,6 +16,14 @@ class ProfileActivity : AppCompatActivity() {
 
     private val viewModel: ProfileViewModel by viewModels()
     private lateinit var binding: ActivityProfileBinding
+
+    private val getImage =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val imageUri = result.data?.data
+                binding.ivProfileImgLoad.setImageURI(imageUri)
+            }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,20 +53,51 @@ class ProfileActivity : AppCompatActivity() {
 
     private fun setupClickListeners() {
         with(binding) {
+            // ivProfileImgLoad 터치 시 갤러리 열기
+            ivProfileImgLoad.setOnClickListener {
+                openGallery()
+            }
             btnProfileMan.setOnClickListener {
                 it.isSelected = true
-                btnProfileMan.setTextColor(ContextCompat.getColor(applicationContext,R.color.white))
-                btnProfileWoman.setTextColor(ContextCompat.getColor(applicationContext,R.color.color_sub_gray3))
+                btnProfileMan.setTextColor(
+                    ContextCompat.getColor(
+                        applicationContext,
+                        R.color.white
+                    )
+                )
+                btnProfileWoman.setTextColor(
+                    ContextCompat.getColor(
+                        applicationContext,
+                        R.color.color_sub_gray3
+                    )
+                )
                 btnProfileWoman.isSelected = false
                 viewModel?.selectedGender?.value = 0
             }
             btnProfileWoman.setOnClickListener {
                 it.isSelected = true
-                btnProfileWoman.setTextColor(ContextCompat.getColor(applicationContext,R.color.white))
-                btnProfileMan.setTextColor(ContextCompat.getColor(applicationContext,R.color.color_sub_gray3))
+                btnProfileWoman.setTextColor(
+                    ContextCompat.getColor(
+                        applicationContext,
+                        R.color.white
+                    )
+                )
+                btnProfileMan.setTextColor(
+                    ContextCompat.getColor(
+                        applicationContext,
+                        R.color.color_sub_gray3
+                    )
+                )
                 btnProfileMan.isSelected = false
                 viewModel?.selectedGender?.value = 1
             }
         }
+    }
+
+    // 갤러리 열기
+    private fun openGallery() {
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        getImage.launch(intent)
     }
 }
