@@ -26,7 +26,12 @@ class ProfileActivity : AppCompatActivity() {
             btnProfileAgreeAndApply.isEnabled = false
         }
 
-        // isButtonEnabled를 옵저빙하여 UI 업데이트
+        // introductionTextCount 업데이트
+        viewModel.introductionTextCount.observe(this, { textCount ->
+            binding.tvProfileIntroductionTextCount.text = textCount
+        })
+
+        // isButtonEnabled 업데이트
         viewModel.isButtonEnabled.observe(this, { isEnabled ->
             binding.btnProfileAgreeAndApply.isEnabled = isEnabled
         })
