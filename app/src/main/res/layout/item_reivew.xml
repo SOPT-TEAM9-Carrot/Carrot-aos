@@ -2,22 +2,95 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:paddingTop="18dp"
+    android:paddingStart="16dp"
+    android:padding="16dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingEnd="20dp">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/img_reivew_profiele"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:src="@drawable/img_review_profile"
-        android:layout_marginTop="18dp"
-        android:layout_marginStart="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:src="@drawable/img_profile" />
 
+    <TextView
+        android:id="@+id/tv_review_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:fontFamily="@font/notosans_bold"
+        android:textColor="@color/color_sub_gray1"
+        android:textFontWeight="600"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/img_reivew_profiele"
+        app:layout_constraintTop_toTopOf="@id/img_reivew_profiele"
+        tools:text="@string/review_dummyName" />
 
+    <TextView
+        android:id="@+id/tv_actualWork"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosans_bold"
+        android:text="@string/review_actualWork"
+        android:textColor="@color/color_main1"
+        android:textFontWeight="600"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/tv_review_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_review_name" />
 
+    <TextView
+        android:id="@+id/tv_review_certification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosans_medium"
+        android:text="@string/review_certification"
+        android:textColor="@color/color_sub_gray3"
+        android:textFontWeight="500"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/tv_review_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_actualWork" />
+
+    <TextView
+        android:id="@+id/tv_review_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/notosans_medium"
+        android:textColor="@color/color_sub_gray1"
+        android:textFontWeight="500"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/tv_review_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_review_certification"
+        tools:text="@string/review_dummyComment" />
+
+    <TextView
+        android:id="@+id/tv_review_partTime"
+        android:paddingHorizontal="2dp"
+        android:background="@drawable/radius_review_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosans_bold"
+        android:text="@string/review_partTime"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/color_sub_gray1"
+        android:textFontWeight="500"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@id/tv_review_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_review_review" />
+
+    <TextView
+        android:id="@+id/tv_review_partTimeComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/notosans_medium"
+        android:text="@string/review_partTimeComment"
+        android:textColor="@color/color_sub_gray3"
+        android:textFontWeight="500"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/tv_review_partTime"
+        app:layout_constraintTop_toBottomOf="@id/tv_review_review" />
 </androidx.constraintlayout.widget.ConstraintLayout>
