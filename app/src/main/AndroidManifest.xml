@@ -16,8 +16,8 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ReviewActivity"
-            android:exported="false" />
+            android:name=".presentation.review.ReviewActivity"
+            android:exported="true" />
         <activity
             android:name=".presentation.page.PageActivity"
             android:exported="true">
