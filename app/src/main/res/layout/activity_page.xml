@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/tappbar_page"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@color/white"
+            app:menu="@menu/page_top_app_bar"
+            app:navigationIcon="@drawable/ic_back"
+            app:title="당근알바"
+            app:titleTextAppearance="@style/TextAppearance.Carrot.title1_bold" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tappbar_page">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_page_representation"
+                android:layout_width="0dp"
+                android:layout_height="242dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                tools:src="@drawable/ic_back" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_page_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="36dp"
+                android:paddingHorizontal="17dp"
+                app:layout_constraintTop_toBottomOf="@id/img_page_representation">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_page_job_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="서빙"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.Carrot.body_medium_10"
+                        android:textSize="11sp"
+                        app:chipCornerRadius="0dp"
+                        app:chipEndPadding="8dp"
+                        app:chipStartPadding="8dp" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <TextView
+                    android:id="@+id/tv_page_body_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:text="어쩌구..서빙 한명 구합니다"
+                    android:textAppearance="@style/TextAppearance.Carrot.sub_title_bold_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chip_page_job_category" />
+
+                <TextView
+                    android:id="@+id/tv_page_body_location"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:text="솝트 서울역점"
+                    android:textAppearance="@style/TextAppearance.Carrot.sub_title_3_medium_11"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_page_body_title" />
+
+                <TextView
+                    android:id="@+id/tv_page_body_dot"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:text=" · "
+                    android:textAppearance="@style/TextAppearance.Carrot.sub_title_3_medium_11"
+                    app:layout_constraintStart_toEndOf="@id/tv_page_body_location"
+                    app:layout_constraintTop_toBottomOf="@id/tv_page_body_title"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_page_body_created_at"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:text="12시간 전"
+                    android:textAppearance="@style/TextAppearance.Carrot.sub_title_3_medium_11"
+                    app:layout_constraintStart_toEndOf="@id/tv_page_body_dot"
+                    app:layout_constraintTop_toBottomOf="@id/tv_page_body_title"
+
+                    />
+
+                <TextView
+                    android:id="@+id/page_body_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="17dp"
+                    android:background="@color/color_sub_gray7"
+                    app:layout_constraintTop_toBottomOf="@id/tv_page_body_location" />
+
+                <ImageView
+                    android:id="@+id/ic_page_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="17dp"
+
+                    android:src="@drawable/ic_coin_aos"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintStart_toStartOf="@id/page_body_divider"
+                    app:layout_constraintTop_toBottomOf="@id/page_body_divider" />
+
+                <TextView
+                    android:id="@+id/tv_page_coin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="15dp"
+                    android:text="시급 10,000원"
+
+                    android:textAppearance="@style/TextAppearance.Carrot.sub_title_bold"
+                    android:textColor="@color/color_main1"
+
+                    app:layout_constraintBottom_toBottomOf="@id/ic_page_coin"
+                    app:layout_constraintStart_toEndOf="@id/ic_page_coin"
+                    app:layout_constraintTop_toTopOf="@id/ic_page_coin" />
+
+                <ImageView
+                    android:id="@+id/ic_page_calendar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+
+                    android:src="@drawable/ic_calendar_day"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintStart_toStartOf="@id/ic_page_coin"
+                    app:layout_constraintTop_toBottomOf="@id/ic_page_coin" />
+
+                <TextView
+                    android:id="@+id/tv_page_calendar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="월,금,토,일"
+
+                    android:textAppearance="@style/TextAppearance.Carrot.body_medium_14"
+                    android:textColor="@color/color_sub_gray1"
+                    app:layout_constraintBottom_toBottomOf="@id/ic_page_calendar"
+                    app:layout_constraintStart_toEndOf="@id/ic_page_calendar"
+                    app:layout_constraintTop_toTopOf="@id/ic_page_calendar" />
+
+                <ImageView
+                    android:id="@+id/ic_page_clock"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+
+                    android:src="@drawable/ic_clock_aos"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintStart_toStartOf="@id/ic_page_calendar"
+                    app:layout_constraintTop_toBottomOf="@id/ic_page_calendar" />
+
+                <TextView
+                    android:id="@+id/tv_page_clock"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="18:00 ~ 00:30"
+
+                    android:textAppearance="@style/TextAppearance.Carrot.body_medium_14"
+                    android:textColor="@color/color_sub_gray1"
+                    app:layout_constraintBottom_toBottomOf="@id/ic_page_clock"
+                    app:layout_constraintStart_toEndOf="@id/ic_page_clock"
+                    app:layout_constraintTop_toTopOf="@id/ic_page_clock" />
+
+                <TextView
+                    android:id="@+id/tv_page_body_content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+
+                    android:text="월,금,토 3일도 가능합니다.
+                 \n근무시간 토요일만 17시까지 출근
+                 \n초보분도 가능합니다^^
+                 \n고기자르는 일 크게 어려운건 없어요~
+                 \n잘 못해도 서비스 마인드 가지신 분
+                 \n성실하게 일해주실 분이면 환영합니다!
+                 \n즐겁게 일하실 분 지원해주세요!"
+                    android:textAppearance="@style/TextAppearance.Carrot.body_medium_14"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ic_page_clock" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_page_asking"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="160dp"
+                    android:background="@drawable/shape_page_rounded_asking"
+                    app:layout_constraintCircleRadius="100dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_page_body_content">
+
+                    <ImageView
+                        android:id="@+id/ic_page_bell"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/ic_bell"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_page_asking_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_marginStart="8dp"
+                        android:text="OOO동 알바 찾으세요?"
+                        android:textAppearance="@style/TextAppearance.Carrot.sub_title_bold_12"
+
+                        app:layout_constraintBottom_toTopOf="@id/tv_page_asking_content"
+                        app:layout_constraintStart_toEndOf="@id/ic_page_bell"
+                        app:layout_constraintTop_toTopOf="@id/ic_page_bell" />
+
+
+                    <TextView
+                        android:id="@+id/tv_page_asking_content"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="8dp"
+                        android:text="이 공고와 비슷한 공고가 새로 올라오면 알려드려요."
+                        android:textAppearance="@style/TextAppearance.Carrot.body_medium_12"
+                        app:layout_constraintBottom_toBottomOf="@id/ic_page_bell"
+                        app:layout_constraintStart_toEndOf="@id/ic_page_bell"
+                        app:layout_constraintTop_toBottomOf="@id/tv_page_asking_title"
+
+                        />
+
+                    <ImageView
+                        android:id="@+id/btn_page_asking_goto"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/ic_next"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_page_counting"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/layout_page_asking">
+
+                    <TextView
+                        android:id="@+id/tv_page_applicant"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+
+                        android:text="지원자 "
+                        android:textAppearance="@style/TextAppearance.Carrot.body_medium_12"
+                        android:textColor="@color/color_sub_gray4"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_page_applicant_count"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="1"
+                        android:textAppearance="@style/TextAppearance.Carrot.body_medium_12"
+                        android:textColor="@color/color_sub_gray4"
+
+                        app:layout_constraintStart_toEndOf="@id/tv_page_applicant" />
+
+
+                    <TextView
+                        android:id="@+id/tv_page_applicant_dot_like"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+
+                        android:text=" · "
+                        android:textAppearance="@style/TextAppearance.Carrot.sub_title_3_medium_11"
+                        app:layout_constraintStart_toEndOf="@id/tv_page_applicant_count" />
+
+
+                    <TextView
+                        android:id="@+id/tv_page_like"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+
+                        android:text="관심 "
+                        android:textAppearance="@style/TextAppearance.Carrot.body_medium_12"
+                        android:textColor="@color/color_sub_gray4"
+                        app:layout_constraintStart_toEndOf="@id/tv_page_applicant_dot_like" />
+
+                    <TextView
+                        android:id="@+id/tv_page_like_count"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="3"
+                        android:textAppearance="@style/TextAppearance.Carrot.body_medium_12"
+                        android:textColor="@color/color_sub_gray4"
+
+                        app:layout_constraintStart_toEndOf="@id/tv_page_like" />
+
+
+                    <TextView
+                        android:id="@+id/tv_page_like_dot_retrieve"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+
+                        android:text=" · "
+                        android:textAppearance="@style/TextAppearance.Carrot.sub_title_3_medium_11"
+                        app:layout_constraintStart_toEndOf="@id/tv_page_like_count" />
+
+                    <TextView
+                        android:id="@+id/tv_page_retrieve"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+
+                        android:text="조회 "
+                        android:textAppearance="@style/TextAppearance.Carrot.body_medium_12"
+                        android:textColor="@color/color_sub_gray4"
+                        app:layout_constraintStart_toEndOf="@id/tv_page_like_dot_retrieve" />
+
+                    <TextView
+                        android:id="@+id/tv_page_retrieve_count"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="27"
+                        android:textAppearance="@style/TextAppearance.Carrot.body_medium_12"
+                        android:textColor="@color/color_sub_gray4"
+
+                        app:layout_constraintStart_toEndOf="@id/tv_page_retrieve" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/img_page_map"
+                    android:layout_width="328dp"
+                    android:layout_height="301dp"
+
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/map"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_page_counting" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
