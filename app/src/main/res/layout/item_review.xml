@@ -9,9 +9,10 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/img_reivew_profiele"
+        android:id="@+id/img_reivew_profile"
         android:layout_width="35dp"
         android:layout_height="35dp"
+        android:src="@drawable/img_profile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/img_profile" />
@@ -25,8 +26,8 @@
         android:textColor="@color/color_sub_gray1"
         android:textFontWeight="600"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@id/img_reivew_profiele"
-        app:layout_constraintTop_toTopOf="@id/img_reivew_profiele"
+        app:layout_constraintStart_toEndOf="@id/img_reivew_profile"
+        app:layout_constraintTop_toTopOf="@id/img_reivew_profile"
         tools:text="@string/review_dummyName" />
 
     <TextView

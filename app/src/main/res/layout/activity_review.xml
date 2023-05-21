@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.review.ReviewActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -20,35 +20,52 @@
                 android:id="@+id/btn_review_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="10dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_back" />
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
                 android:fontFamily="@font/notosans_bold"
+                android:text="@string/review_review"
                 android:textColor="@color/color_sub_gray1"
                 android:textFontWeight="700"
                 android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@id/btn_review_back"
-                app:layout_constraintTop_toTopOf="@id/btn_review_back"
-                tools:text="@string/review_review"/>
+                app:layout_constraintTop_toTopOf="@id/btn_review_back" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rc_review_reviews"
+    <ViewFlipper
+        android:id="@+id/laout_review_viewFilpper"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tb_profile_header"
-        tools:listitem="@layout/item_reivew" />
+        app:layout_constraintTop_toBottomOf="@id/tb_profile_header">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_review_reviews"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_review" />
+
+        <TextView
+            android:id="@+id/tv_review_noReview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="아직 작성된 후기가 없습니다! no review"
+            android:textFontWeight="700" />
+
+    </ViewFlipper>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
