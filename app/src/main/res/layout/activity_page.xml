@@ -388,6 +388,18 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/layout_page_counting" />
 
+                <TextView
+                    android:id="@+id/tv_page_map_detail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="21dp"
+                    android:textAppearance="@style/TextAppearance.Carrot.body_medium_14"
+                    android:textColor="@color/color_sub_gray1"
+                    app:layout_constraintTop_toBottomOf="@id/img_page_map"
+                    app:layout_constraintStart_toStartOf="@id/img_page_map"
+                    android:text="서울 종로구 창경궁로 230"
+                    />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 

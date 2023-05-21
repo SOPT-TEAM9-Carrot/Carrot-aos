@@ -1,15 +1,14 @@
 package com.sopt.carrot.data
 
 import com.sopt.carrot.BuildConfig.API_SERVER_URL
+import com.sopt.carrot.data.page.PageService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object ApiPool {
-    // TODO : 구성한 Api Service interface 들을 retrofit 을 통해 create 해주세요
-    // ex
-    // val loginService = RetrofitPool.toApiServer.create<LoginService>()
+    val pageService = RetrofitPool.toApiServer.create(PageService::class.java)
 }
 
 object RetrofitPool {
