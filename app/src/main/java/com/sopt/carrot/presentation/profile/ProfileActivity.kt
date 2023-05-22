@@ -91,6 +91,10 @@ class ProfileActivity : AppCompatActivity() {
                 btnProfileMan.isSelected = false
                 viewModel?.selectedGender?.value = 1
             }
+            ivProfileStopProfile.setOnClickListener {
+                val dialog = CustomPopupDialog(this@ProfileActivity)
+                dialog.show()
+            }
         }
     }
 
