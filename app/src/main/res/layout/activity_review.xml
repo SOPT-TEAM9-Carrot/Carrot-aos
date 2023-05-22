@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/color_sub_gray7"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_sub_gray7"
     tools:context=".presentation.review.ReviewActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -43,11 +43,11 @@
     </androidx.appcompat.widget.Toolbar>
 
     <ViewFlipper
-        android:layout_marginTop="1dp"
-        android:background="@color/white"
         android:id="@+id/laout_review_viewFilpper"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,9 +65,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/notosans_bold"
             android:gravity="center"
-            android:text="아직 작성된 후기가 없습니다! no review"
-            android:textFontWeight="700" />
+            android:text="@string/review_noReview"
+            android:textColor="@color/color_sub_gray5"
+            android:textFontWeight="700"
+            android:textSize="18sp" />
 
     </ViewFlipper>
 
