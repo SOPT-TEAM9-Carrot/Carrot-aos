@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.sopt.carrot.presentation.profile.ProfileViewModel" />
@@ -22,12 +23,13 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/white">
 
-            <ImageButton
-                android:id="@+id/btn_profile_stopProfile"
+            <ImageView
+                android:id="@+id/iv_profile_stopProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_x" />
+                android:src="@drawable/ic_x"
+                android:stateListAnimator="@null" />
         </androidx.appcompat.widget.Toolbar>
 
         <androidx.core.widget.NestedScrollView
@@ -116,11 +118,11 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="16dp"
-                    android:background="@drawable/radius_profile_et"
+                    android:background="@drawable/radius_gray6_radius_1"
                     android:hint="@string/profile_nameHint"
-                    android:text="@={viewModel.name}"
                     android:paddingVertical="13dp"
                     android:paddingLeft="18dp"
+                    android:text="@={viewModel.name}"
                     android:textColorHint="@color/color_sub_gray5"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/tv_profile_title"
@@ -157,7 +159,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="16dp"
-                    android:background="@drawable/radius_profile_et"
+                    android:background="@drawable/radius_gray6_radius_1"
                     android:hint="@string/profile_numberHint"
                     android:inputType="phone"
                     android:maxLength="11"
@@ -244,7 +246,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="16dp"
-                    android:background="@drawable/radius_profile_et"
+                    android:background="@drawable/radius_gray6_radius_1"
                     android:hint="@string/profile_birthHint"
                     android:inputType="numberDecimal"
                     android:maxLength="4"
@@ -289,7 +291,7 @@
                     android:layout_height="32dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="16dp"
-                    android:background="@drawable/radius_profile_btn"
+                    android:background="@drawable/radius_gray7_radius_6"
                     android:gravity="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/tv_profile_title"
@@ -347,7 +349,7 @@
                     android:layout_height="172dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginRight="16dp"
-                    android:background="@drawable/radius_profile_et"
+                    android:background="@drawable/radius_gray6_radius_1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/tv_profile_title"
                     app:layout_constraintTop_toBottomOf="@id/tv_profile_introduction">
@@ -363,8 +365,8 @@
                         android:hint="@string/profile_introductionHint"
                         android:maxLength="2000"
                         android:maxLines="7"
-                        android:text="@={viewModel.introduction}"
                         android:scrollbars="vertical"
+                        android:text="@={viewModel.introduction}"
                         android:textColorHint="@color/color_sub_gray5"
                         android:textFontWeight="500"
                         android:textSize="14sp"
