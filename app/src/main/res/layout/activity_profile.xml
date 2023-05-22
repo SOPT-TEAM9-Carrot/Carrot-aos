@@ -248,7 +248,7 @@
                     android:layout_marginRight="16dp"
                     android:background="@drawable/radius_gray6_radius_1"
                     android:hint="@string/profile_birthHint"
-                    android:inputType="numberDecimal"
+                    android:inputType="number"
                     android:maxLength="4"
                     android:paddingVertical="13dp"
                     android:paddingLeft="18dp"
