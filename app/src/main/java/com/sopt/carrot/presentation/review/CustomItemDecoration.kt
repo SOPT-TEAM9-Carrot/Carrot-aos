@@ -11,7 +11,7 @@ class CustomItemDecoration(): RecyclerView.ItemDecoration() {
     override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
         super.onDrawOver(c, parent, state)
         val widthMargin = 45f   // 좌우 Margin
-        val height = 1f         // 사각형의 height
+        val height = 0.5f         // 사각형의 height
 
         val left = parent.paddingLeft.toFloat()
         val right = parent.width - parent.paddingRight.toFloat()
