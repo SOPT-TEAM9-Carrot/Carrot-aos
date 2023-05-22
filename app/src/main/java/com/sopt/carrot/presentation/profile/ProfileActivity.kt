@@ -95,6 +95,9 @@ class ProfileActivity : AppCompatActivity() {
                 val dialog = CustomPopupDialog(this@ProfileActivity)
                 dialog.show()
             }
+            btnProfileAgreeAndApply.setOnClickListener {
+                viewModel?.applyToServer()
+            }
         }
     }
 
