@@ -3,6 +3,8 @@ package com.sopt.carrot.presentation.review.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import coil.transform.CircleCropTransformation
 import com.sopt.carrot.data.review.ResponseReviewDto
 import com.sopt.carrot.databinding.ItemReviewBinding
 
@@ -16,7 +18,9 @@ class ReviewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             with(binding) {
                 tvReviewName.text = itemList.reviewerName
                 tvReviewReview.text = itemList.comment
-                //imgReviewProfile.text = itemList.nickname
+                imgReivewProfile.load(itemList.imageUrl) {
+                    transformations(CircleCropTransformation())
+                }
             }
         }
     }
