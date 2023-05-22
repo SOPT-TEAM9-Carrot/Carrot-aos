@@ -24,6 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
         android:layout_marginTop="3dp"
+        android:drawableEnd="@drawable/ic_info"
+        android:drawablePadding="7dp"
         android:text="데이즈호텔명동 · 충무로1가 · 광고"
         android:textAppearance="@style/TextAppearance.Carrot.body_medium_11"
         android:textColor="@color/color_sub_gray3"
