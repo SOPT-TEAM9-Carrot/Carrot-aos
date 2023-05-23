@@ -1,44 +1,32 @@
 package com.sopt.carrot.presentation.home
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.sopt.carrot.R
+import androidx.recyclerview.widget.RecyclerView
+import com.sopt.carrot.data.ApiPool
+import com.sopt.carrot.data.home.ResponseRecommendDto
+import com.sopt.carrot.util.enqueueUtil
 
 class RecommendedViewModel : ViewModel() {
-    val mockRecommendedJobLists = listOf(
-        RecommendedJob(
-            id = 1,
-            image = R.drawable.img_test_1,
-            title = "당근 마켓",
-            salary = "시급 10,000원"
+    private val _recommendedJobResponse: MutableLiveData<ResponseRecommendDto> = MutableLiveData()
+    val recommendedJobResponse: LiveData<ResponseRecommendDto> = _recommendedJobResponse
 
-        ),
-        RecommendedJob(
-            id = 2,
-            image = R.drawable.img_test_2,
-            title = "당근 알바",
-            salary = "시급 20,000원"
+    fun getRecommendedJob(size: Long, recyclerView: RecyclerView, message: (String) -> Unit) {
+        ApiPool.recommendService.getRecommendJobList(1, size).enqueueUtil(
+            onSuccess = {
+                _recommendedJobResponse.value = it
+                recyclerView.adapter = RecommendedJobAdapter().apply { submitList(it.data.posts) }
+                message.invoke(it.message)
 
-        ),
-        RecommendedJob(
-            id = 3,
-            image = R.drawable.img_test_1,
-            title = "당근 마켓",
-            salary = "시급 10,000원"
-
-        ),
-        RecommendedJob(
-            id = 4,
-            image = R.drawable.img_test_2,
-            title = "당근 알바",
-            salary = "시급 20,000원"
-
+            },
+            onError = {
+                message.invoke("error:${it}")
+            }
         )
 
-    )
 
-
-
-
+    }
 
 
 }
