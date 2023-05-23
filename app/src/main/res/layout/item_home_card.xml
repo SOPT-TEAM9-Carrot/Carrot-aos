@@ -12,6 +12,8 @@
         android:id="@+id/iv_item_home_card_img"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@drawable/rectangle_transparent_radius_8_corner_top"
+        android:clipToOutline="true"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1.7:1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +24,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/rectangle_gray7_radius_8"
+        android:background="@drawable/rectangle_gray7_radius_8_corner_bottom"
         android:paddingBottom="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,12 +38,12 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="24dp"
-            tools:text="리앙크리스피롤 수원AK점"
             android:textAppearance="@style/TextAppearance.Carrot.sub_title_bold"
             android:textColor="@color/color_sub_gray1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="리앙크리스피롤 수원AK점" />
 
         <TextView
             android:id="@+id/tv_item_home_card_detail"
@@ -63,14 +65,14 @@
             android:layout_height="0dp"
             android:layout_marginTop="18dp"
             android:layout_marginEnd="16dp"
-            tools:text="월급 201만원"
             android:textAlignment="textEnd"
             android:textAppearance="@style/TextAppearance.Carrot.sub_title_bold_12"
             android:textColor="@color/color_main1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_item_home_card_detail"
-            app:layout_goneMarginEnd="16dp" />
+            app:layout_goneMarginEnd="16dp"
+            tools:text="월급 201만원" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
