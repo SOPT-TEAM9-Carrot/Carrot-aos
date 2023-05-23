@@ -85,7 +85,7 @@
                     app:layout_constraintTop_toBottomOf="@id/tv_home_title"
                     app:spanCount="2"
                     tools:itemCount="4"
-                    tools:listitem="@layout/item_home_card" />
+                    tools:listitem="@layout/item_home_recommended_job" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_home_shuffle"
@@ -236,7 +236,7 @@
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintTop_toBottomOf="@id/iv_home_entry"
                     tools:itemCount="3"
-                    tools:listitem="@layout/item_home_list" />
+                    tools:listitem="@layout/item_home_full_job" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

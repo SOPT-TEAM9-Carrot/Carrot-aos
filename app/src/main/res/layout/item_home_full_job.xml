@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/tv_item_home_list_title"
+        android:id="@+id/tv_item_home_full_job_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -19,7 +19,7 @@
         tools:text="데이즈호텔 프론트" />
 
     <TextView
-        android:id="@+id/tv_item_home_list_detail"
+        android:id="@+id/tv_item_home_full_job_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
@@ -30,10 +30,10 @@
         android:textAppearance="@style/TextAppearance.Carrot.body_medium_11"
         android:textColor="@color/color_sub_gray3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_item_home_list_title" />
+        app:layout_constraintTop_toBottomOf="@id/tv_item_home_full_job_title" />
 
     <TextView
-        android:id="@+id/tv_item_home_list_numbers_of_reviews"
+        android:id="@+id/tv_item_home_full_job_numbers_of_reviews"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -42,11 +42,11 @@
         android:textAppearance="@style/TextAppearance.Carrot.sub_title_bold_12"
         android:textColor="@color/color_main1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_item_home_list_detail" />
+        app:layout_constraintTop_toBottomOf="@id/tv_item_home_full_job_detail" />
 
 
     <TextView
-        android:id="@+id/tv_item_home_list_review_tag_1"
+        android:id="@+id/tv_item_home_full_job_review_tag_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -57,11 +57,11 @@
         android:text="연락을 잘해줘요"
         android:textAppearance="@style/TextAppearance.Carrot.body_medium_11"
         android:textColor="@color/color_sub_gray2"
-        app:layout_constraintStart_toEndOf="@id/tv_item_home_list_numbers_of_reviews"
-        app:layout_constraintTop_toBottomOf="@id/tv_item_home_list_detail" />
+        app:layout_constraintStart_toEndOf="@id/tv_item_home_full_job_numbers_of_reviews"
+        app:layout_constraintTop_toBottomOf="@id/tv_item_home_full_job_detail" />
 
     <TextView
-        android:id="@+id/tv_item_home_list_review_tag_2"
+        android:id="@+id/tv_item_home_full_job_review_tag_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -72,11 +72,11 @@
         android:text="걸어서 10분"
         android:textAppearance="@style/TextAppearance.Carrot.body_medium_11"
         android:textColor="@color/color_sub_blue1"
-        app:layout_constraintStart_toEndOf="@id/tv_item_home_list_review_tag_1"
-        app:layout_constraintTop_toTopOf="@id/tv_item_home_list_review_tag_1" />
+        app:layout_constraintStart_toEndOf="@id/tv_item_home_full_job_review_tag_1"
+        app:layout_constraintTop_toTopOf="@id/tv_item_home_full_job_review_tag_1" />
 
     <TextView
-        android:id="@+id/tv_item_home_list_period"
+        android:id="@+id/tv_item_home_full_job_period"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -85,11 +85,11 @@
         android:textAppearance="@style/TextAppearance.Carrot.body_medium_14"
         android:textColor="@color/color_sub_gray4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_item_home_list_numbers_of_reviews" />
+        app:layout_constraintTop_toBottomOf="@id/tv_item_home_full_job_numbers_of_reviews" />
 
 
     <ImageView
-        android:id="@+id/iv_item_home_list_img"
+        android:id="@+id/iv_item_home_full_job_img"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="17dp"
@@ -97,7 +97,7 @@
         android:background="@drawable/rectangle_gray7_radius_6"
         android:clipToOutline="true"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@id/tv_item_home_list_salary"
+        app:layout_constraintBottom_toTopOf="@id/tv_item_home_full_job_salary"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -105,7 +105,7 @@
 
 
     <TextView
-        android:id="@+id/tv_item_home_list_salary"
+        android:id="@+id/tv_item_home_full_job_salary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -115,11 +115,11 @@
         android:textColor="@color/color_main1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_item_home_list_img"
+        app:layout_constraintTop_toBottomOf="@id/iv_item_home_full_job_img"
         tools:text="시급 10,000원" />
 
     <View
-        android:id="@+id/view_item_home_list_line"
+        android:id="@+id/view_item_home_full_job_line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginHorizontal="16dp"
@@ -127,6 +127,6 @@
         android:background="@color/color_sub_gray6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_item_home_list_period" />
+        app:layout_constraintTop_toBottomOf="@id/tv_item_home_full_job_period" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
