@@ -7,12 +7,12 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.sopt.carrot.databinding.ItemHomeListBinding
 
-class JobAdapter() : ListAdapter<Card, JobAdapter.JobAdapterViewHolder>(diffUtil) {
+class FullJobAdapter() : ListAdapter<RecommendedJob, FullJobAdapter.JobAdapterViewHolder>(diffUtil) {
 
     class JobAdapterViewHolder(private val binding: ItemHomeListBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun onBind(data: Card) {
+        fun onBind(data: RecommendedJob) {
             with(binding) {
                 ivItemHomeListImg.setImageDrawable(root.context.getDrawable(data.image))
                 tvItemHomeListTitle.text = data.title
@@ -25,12 +25,12 @@ class JobAdapter() : ListAdapter<Card, JobAdapter.JobAdapterViewHolder>(diffUtil
 
 
     companion object {
-        val diffUtil = object : DiffUtil.ItemCallback<Card>() {
-            override fun areItemsTheSame(oldItem: Card, newItem: Card): Boolean {
+        val diffUtil = object : DiffUtil.ItemCallback<RecommendedJob>() {
+            override fun areItemsTheSame(oldItem: RecommendedJob, newItem: RecommendedJob): Boolean {
                 return oldItem.id == newItem.id
             }
 
-            override fun areContentsTheSame(oldItem: Card, newItem: Card): Boolean {
+            override fun areContentsTheSame(oldItem: RecommendedJob, newItem: RecommendedJob): Boolean {
                 return oldItem == newItem
             }
 

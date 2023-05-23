@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/iv_item_home_card_img"
+        android:id="@+id/iv_item_home_recommended_job_img"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@drawable/rectangle_transparent_radius_8_corner_top"
@@ -29,10 +29,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_item_home_card_img">
+        app:layout_constraintTop_toBottomOf="@id/iv_item_home_recommended_job_img">
 
         <TextView
-            android:id="@+id/tv_item_home_card_title"
+            android:id="@+id/tv_item_home_recommended_job_title"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
@@ -46,7 +46,7 @@
             tools:text="리앙크리스피롤 수원AK점" />
 
         <TextView
-            android:id="@+id/tv_item_home_card_detail"
+            android:id="@+id/tv_item_home_recommended_job_detail"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
@@ -56,11 +56,11 @@
             android:textAppearance="@style/TextAppearance.Carrot.body_medium_11"
             android:textColor="@color/color_sub_gray3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tv_item_home_card_title"
-            app:layout_constraintTop_toBottomOf="@id/tv_item_home_card_title" />
+            app:layout_constraintStart_toStartOf="@id/tv_item_home_recommended_job_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_home_recommended_job_title" />
 
         <TextView
-            android:id="@+id/tv_item_home_card_salary"
+            android:id="@+id/tv_item_home_recommended_job_salary"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="18dp"
@@ -70,7 +70,7 @@
             android:textColor="@color/color_main1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_item_home_card_detail"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_home_recommended_job_detail"
             app:layout_goneMarginEnd="16dp"
             tools:text="월급 201만원" />
 

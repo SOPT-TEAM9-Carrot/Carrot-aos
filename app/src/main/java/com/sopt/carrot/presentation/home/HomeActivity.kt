@@ -8,10 +8,10 @@ import com.sopt.carrot.databinding.ActivityHomeBinding
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
-    private lateinit var adapterCard: CardAdapter
-    private lateinit var adapterList: JobAdapter
-    private val viewModelCard by viewModels<CardViewModel>()
-    private val viewModelList by viewModels<ListViewModel>()
+    private lateinit var adapterCard: RecommendedJobAdapter
+    private lateinit var adapterList: FullJobAdapter
+    private val viewModelCard by viewModels<RecommendedViewModel>()
+    private val viewModelList by viewModels<FullJobViewModel>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,10 +23,10 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setAdapter() {
-        adapterCard = CardAdapter()
+        adapterCard = RecommendedJobAdapter()
         binding.rvHomeCard.adapter = adapterCard
-        adapterCard.submitList(viewModelCard.mockCardLists)
-        adapterList = JobAdapter()
+        adapterCard.submitList(viewModelCard.mockRecommendedJobLists)
+        adapterList = FullJobAdapter()
         binding.rvHomeList.adapter = adapterList
         adapterList.submitList(viewModelList.mockListLists)
     }
