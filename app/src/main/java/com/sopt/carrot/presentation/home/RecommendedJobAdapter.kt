@@ -5,20 +5,24 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.sopt.carrot.data.home.ResponseRecommendDto
 import com.sopt.carrot.databinding.ItemHomeRecommendedJobBinding
 
 class RecommendedJobAdapter() :
-    ListAdapter<RecommendedJob, RecommendedJobAdapter.CardAdapterViewHolder>(diffUtil) {
+    ListAdapter<ResponseRecommendDto.Detail.Post, RecommendedJobAdapter.CardAdapterViewHolder>(
+        diffUtil
+    ) {
 
 
     class CardAdapterViewHolder(private val binding: ItemHomeRecommendedJobBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun onBind(data: RecommendedJob) {
+        fun onBind(data: ResponseRecommendDto.Detail.Post) {
             with(binding) {
-                ivItemHomeRecommendedJobImg.setImageDrawable(root.context.getDrawable(data.image))
+                Glide.with(root).load(data.image).into(ivItemHomeRecommendedJobImg)
                 tvItemHomeRecommendedJobTitle.text = data.title
-                tvItemHomeRecommendedJobSalary.text = data.salary
+                tvItemHomeRecommendedJobSalary.text = "월급 " + data.monthlyWage.toString() + "만원"
             }
 
         }
@@ -27,17 +31,17 @@ class RecommendedJobAdapter() :
 
 
     companion object {
-        val diffUtil = object : DiffUtil.ItemCallback<RecommendedJob>() {
+        val diffUtil = object : DiffUtil.ItemCallback<ResponseRecommendDto.Detail.Post>() {
             override fun areItemsTheSame(
-                oldItem: RecommendedJob,
-                newItem: RecommendedJob
+                oldItem: ResponseRecommendDto.Detail.Post,
+                newItem: ResponseRecommendDto.Detail.Post
             ): Boolean {
-                return oldItem.id == newItem.id
+                return oldItem.postId == newItem.postId
             }
 
             override fun areContentsTheSame(
-                oldItem: RecommendedJob,
-                newItem: RecommendedJob
+                oldItem: ResponseRecommendDto.Detail.Post,
+                newItem: ResponseRecommendDto.Detail.Post
             ): Boolean {
                 return oldItem == newItem
             }
@@ -55,7 +59,7 @@ class RecommendedJobAdapter() :
     }
 
     override fun onBindViewHolder(holder: CardAdapterViewHolder, position: Int) {
-        holder.onBind(currentList[position])
+        holder.onBind(getItem(position) as ResponseRecommendDto.Detail.Post)
     }
 
 
