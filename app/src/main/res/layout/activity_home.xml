@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_home_tool_Bar"
         android:layout_width="match_parent"
@@ -12,27 +13,28 @@
         android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menu_home_toolbar"
-        app:subtitleTextAppearance="@style/TextAppearance.Carrot.title1_bold"
-        app:title="당근알바" />
+        app:navigationIcon="@drawable/ic_x"
+        app:title="당근알바"
+        app:titleTextAppearance="@style/TextAppearance.Carrot.title1_bold" />
+
 
     <EditText
         android:id="@+id/et_home_search_bar"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginHorizontal="16dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/rectangle_gray7_radius_2"
+        android:background="@drawable/rectangle_gray7_radius_6"
         android:enabled="false"
         android:hint="'어린이날 알바' 찾아보기"
-        android:minHeight="48dp"
+        android:minHeight="0dp"
         android:paddingHorizontal="10dp"
-        android:paddingVertical="6.5dp"
+        android:paddingVertical="7dp"
         android:textAppearance="@style/TextAppearance.Carrot.body_medium_14"
         android:textColorHint="@color/color_sub_gray5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tb_home_tool_Bar"/>
+        app:layout_constraintTop_toBottomOf="@id/tb_home_tool_Bar"
+        tools:ignore="TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="16dp" />
 
     <View
         android:id="@+id/view_home_line"
@@ -40,8 +42,6 @@
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
         android:background="@color/color_sub_gray6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_home_search_bar" />
 
     <ScrollView
@@ -49,35 +49,30 @@
         android:layout_height="0dp"
         android:contentDescription="scrollview"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/view_home_line">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/color_sub_gray7">
+            android:background="@color/color_sub_gray7"
+            android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layout_home_card_type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
-                android:background="@color/white">
+                android:background="@color/white"
+                android:visibility="visible">
 
                 <TextView
                     android:id="@+id/tv_home_title"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="15dp"
-                    android:layout_marginEnd="16dp"
                     android:text="내 주변 사장님이\n교북동 빠릿님을 찾고 있어요!"
                     android:textAppearance="@style/TextAppearance.Carrot.sub_title_bold_16"
                     android:textColor="@color/color_sub_gray1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -87,8 +82,6 @@
                     android:layout_marginHorizontal="12dp"
                     android:layout_marginTop="5dp"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_home_title"
                     app:spanCount="2"
                     tools:itemCount="4"
@@ -101,17 +94,21 @@
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="24dp"
-                    android:background="@drawable/rectangle_gray7_radius_2"
-                    android:minHeight="48dp"
-                    android:paddingHorizontal="6dp"
-                    android:text="다른 알바 더보기"
+                    android:background="@drawable/rectangle_gray7_radius_6"
                     android:backgroundTint="@color/color_sub_gray7"
+                    android:drawableStart="@drawable/ic_refresh"
+                    android:drawablePadding="6dp"
+                    android:minHeight="0dp"
+                    android:paddingHorizontal="135dp"
+                    android:paddingVertical="6dp"
+                    android:text="다른 알바 더보기"
+                    android:textAlignment="textStart"
                     android:textAppearance="@style/TextAppearance.Carrot.sub_title_bold_12"
                     android:textColor="@color/color_sub_gray1"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/rv_home_card" />
+                    app:layout_constraintTop_toBottomOf="@id/rv_home_card"
+                    tools:ignore="TouchTargetSizeCheck"
+                    tools:layout_editor_absoluteX="16dp" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -119,7 +116,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layout_home_filter_type"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:background="@color/white">
 
@@ -131,6 +128,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="18dp"
                     android:background="@drawable/rectangle_gray6_radius_100"
+                    android:drawableRight="@drawable/ic_details"
+                    android:drawablePadding="6dp"
                     android:paddingHorizontal="12dp"
                     android:paddingVertical="4dp"
                     android:text="교복동 외 234"
@@ -145,11 +144,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:background="@drawable/rectangle_gray6_radius_100"
+                    android:drawableStart="@drawable/ic_period"
+                    android:drawablePadding="6dp"
                     android:paddingHorizontal="12dp"
                     android:paddingVertical="4dp"
                     android:text="단기"
-                    android:drawablePadding="6dp"
-                    android:drawableStart="@drawable/ic_period"
                     android:textAppearance="@style/TextAppearance.Carrot.body_medium_14"
                     android:textColor="@color/color_sub_gray1"
                     app:layout_constraintStart_toEndOf="@id/tv_home_filter_place"
@@ -161,6 +160,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:background="@drawable/rectangle_gray6_radius_100"
+                    android:drawableRight="@drawable/ic_details"
+                    android:drawablePadding="6dp"
                     android:paddingHorizontal="12dp"
                     android:paddingVertical="4dp"
                     android:text="하는일"
@@ -175,6 +176,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:background="@drawable/rectangle_gray6_radius_100"
+                    android:drawableRight="@drawable/ic_details"
+                    android:drawablePadding="6dp"
                     android:paddingHorizontal="12dp"
                     android:paddingVertical="4dp"
                     android:text="요일"
@@ -185,20 +188,32 @@
 
 
                 <TextView
-                    android:id="@+id/tv_home_notification"
+                    android:id="@+id/tv_home_notification_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="18dp"
-                    android:background="@drawable/rectangle_gray7_radius_2"
+                    android:background="@drawable/rectangle_gray7_radius_8"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="14dp"
                     android:text="원하는 알바를 알림으로 받아보세요"
                     android:textAppearance="@style/TextAppearance.Carrot.body_medium_14"
                     android:textColor="@color/color_sub_gray2"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_home_filter_place" />
+
+
+                <TextView
+                    android:id="@+id/tv_home_notification_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:drawableStart="@drawable/ic_bell_2"
+                    android:drawablePadding="5dp"
+                    android:text="알림설정"
+                    android:textAppearance="@style/TextAppearance.Carrot.sub_title_bold"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_home_notification_1"
+                    app:layout_constraintEnd_toEndOf="@id/tv_home_notification_1"
+                    app:layout_constraintTop_toTopOf="@id/tv_home_notification_1" />
 
                 <ImageView
                     android:id="@+id/iv_home_entry"
@@ -206,21 +221,31 @@
                     android:layout_height="101dp"
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="9dp"
-                    android:src="@drawable/rectangle_gray7_radius_2"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_home_notification" />
+                    android:layout_marginBottom="1dp"
+                    android:background="@drawable/rectangle_gray7_radius_8"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_entry"
+                    app:layout_constraintBottom_toTopOf="@id/rv_home_list"
+                    app:layout_constraintTop_toBottomOf="@id/tv_home_notification_1" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_home_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/iv_home_entry"
-                    tools:listitem="@layout/item_home_list"
-                    tools:itemCount="3"/>
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_home_list" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_home_full_list_type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:background="@color/white">
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
