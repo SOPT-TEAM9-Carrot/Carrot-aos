@@ -23,6 +23,7 @@
     <string name="profile_agreePrivacy2">(필수) 개인정보 제 3자 제공 동의</string>
     <string name="profile_agreeAndApply">동의하고 지원하기</string>
     //review
+    <string name="sample1">sample1</string>
     <string name="review_review">후기</string>
     <string name="review_actualWork">실제근무</string>
     <string name="review_certification">인계동 인증 29 회 · 2개월 전</string>
@@ -35,6 +36,5 @@
     <string name="sample2">sample2</string>
     //home
     <string name="sample3">sample3</string>
+
 </resources>
-
-
