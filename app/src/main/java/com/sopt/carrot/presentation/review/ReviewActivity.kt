@@ -1,5 +1,6 @@
 package com.sopt.carrot.presentation.review
 
+import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -7,13 +8,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.sopt.carrot.databinding.ActivityReviewBinding
 import com.sopt.carrot.presentation.review.adapter.ReviewAdapter
 import com.sopt.carrot.presentation.review.model.ReviewViewModel
+import com.sopt.carrot.util.toast
 
 class ReviewActivity : AppCompatActivity() {
     private val viewModel by viewModels<ReviewViewModel>()
     private var _binding: ActivityReviewBinding? = null
     private val binding: ActivityReviewBinding
         get() = requireNotNull(_binding) { "binding is null" }
-
+    private val context : Context = this
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityReviewBinding.inflate(layoutInflater)
@@ -37,20 +39,15 @@ class ReviewActivity : AppCompatActivity() {
             }
         }
 
-        // 통신처리 예정
         viewModel.signUpResult.observe(this) { signUpResult ->
-            makeToastMessage(signUpResult.message)
+            context.toast(signUpResult.message)
         }
         viewModel.errorResult.observe(this) { errorResult ->
-            makeToastMessage(errorResult.message)
+            context.toast(errorResult.message)
         }
     }
 
     private fun getUserIdFromPage(): Long {
         return 3L //임시 데이터 3
-    }
-
-    private fun makeToastMessage(string: String) {
-        Toast.makeText(this, string, Toast.LENGTH_LONG).show()
     }
 }
