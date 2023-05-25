@@ -43,7 +43,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="리앙크리스피롤 수원AK점" />
+            tools:text="@string/item_home_recommended_job_title" />
 
         <TextView
             android:id="@+id/tv_item_home_recommended_job_detail"
@@ -52,7 +52,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="29dp"
-            android:text="리앙크리스피롤 수원AK점"
+            android:text="@string/item_home_recommended_job_detail"
             android:textAppearance="@style/TextAppearance.Carrot.body_medium_11"
             android:textColor="@color/color_sub_gray3"
             app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +72,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_item_home_recommended_job_detail"
             app:layout_goneMarginEnd="16dp"
-            tools:text="월급 201만원" />
+            tools:text="@string/item_home_full_job_salary" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

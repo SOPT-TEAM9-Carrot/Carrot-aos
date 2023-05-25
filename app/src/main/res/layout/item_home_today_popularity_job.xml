@@ -24,7 +24,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="1위 카페운영및관리.광고홍보.멀티되..." />
+        tools:text="@string/item_home_today_popularity_job_title" />
 
 
     <TextView
@@ -38,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_item_home_today_popularity_job_title"
-        tools:text="오랑제뜨21\t\t연남동" />
+        tools:text="@string/item_home_today_popularity_job_detail" />
 
     <TextView
         android:id="@+id/tv_item_home_today_popularity_job_interest"
@@ -49,7 +49,7 @@
         android:textColor="@color/color_sub_gray3"
         app:layout_constraintBottom_toTopOf="@id/tv_item_home_today_popularity_job_check"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="관심 2" />
+        tools:text="@string/item_home_today_popularity_job_interest" />
 
 
     <TextView
@@ -62,7 +62,7 @@
         android:textColor="@color/color_sub_gray3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="조회 132"
+        tools:text="@string/item_home_today_popularity_job_check"
 
         />
 
@@ -79,7 +79,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tv_item_home_today_popularity_job_check"
-        tools:text="10,000원" />
+        tools:text="@string/item_home_today_popularity_job_salary" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
