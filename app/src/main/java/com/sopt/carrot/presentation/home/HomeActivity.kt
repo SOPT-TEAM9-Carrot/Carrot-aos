@@ -13,6 +13,7 @@ class HomeActivity : AppCompatActivity() {
     private val viewModelPopularity by viewModels<TodayPopularityJobViewModel>()
     private val viewModelRecommended by viewModels<RecommendedViewModel>()
     private val viewModelList by viewModels<FullJobViewModel>()
+    private val jobDataCount: Long = 8L
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +21,7 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         observeRecommend()
+        observeSelect()
         observeFull()
         setTodayPopularityJobAdapter()
 
@@ -28,18 +30,27 @@ class HomeActivity : AppCompatActivity() {
 
     private fun observeRecommend() {
         viewModelRecommended.getRecommendedJob(
-            4L,
+            jobDataCount,
             binding.rvHomeRecommend,
             message = { str -> toast(str) })
     }
 
-    private fun observeFull() {
+    private fun observeSelect() {
         viewModelList.getFullJob(
-            4L,
-            binding.rvHomeSelectList, message = { str -> toast(str) }
+            jobDataCount,
+            binding.rvHomeSelectList, message = { str -> toast(str) }, 1
         )
 
     }
+
+    private fun observeFull() {
+        viewModelList.getFullJob(
+            jobDataCount,
+            binding.rvHomeFull, message = { str -> toast(str) }, 2
+        )
+
+    }
+
 
     private fun setTodayPopularityJobAdapter() {
         adapter = TodayPopularityJobAdapter()

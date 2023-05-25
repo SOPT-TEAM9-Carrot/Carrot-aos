@@ -13,11 +13,11 @@ class FullJobViewModel : ViewModel() {
     private val _fullJobResponse: MutableLiveData<ResponseFullListDto> = MutableLiveData()
     val fullJobResponse: LiveData<ResponseFullListDto> = _fullJobResponse
 
-    fun getFullJob(size: Long, recyclerView: RecyclerView, message: (String) -> Unit) {
+    fun getFullJob(size: Long, recyclerView: RecyclerView, message: (String) -> Unit,state:Int) {
         ApiPool.fullListService.getFullJobList(1, size).enqueueUtil(
             onSuccess = {
                 _fullJobResponse.value = it
-                recyclerView.adapter = FullJobAdapter().apply { submitList(it.data.posts) }
+                recyclerView.adapter = FullJobAdapter(state).apply { submitList(it.data.posts) }
                 message.invoke(it.message)
 
             },
