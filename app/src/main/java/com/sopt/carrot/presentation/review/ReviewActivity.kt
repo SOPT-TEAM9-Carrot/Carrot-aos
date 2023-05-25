@@ -1,11 +1,13 @@
 package com.sopt.carrot.presentation.review
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.sopt.carrot.databinding.ActivityReviewBinding
+import com.sopt.carrot.presentation.page.PageActivity
 import com.sopt.carrot.presentation.review.adapter.ReviewAdapter
 import com.sopt.carrot.presentation.review.model.ReviewViewModel
 import com.sopt.carrot.util.toast
@@ -44,6 +46,11 @@ class ReviewActivity : AppCompatActivity() {
         }
         viewModel.errorResult.observe(this) { errorResult ->
             context.toast(errorResult.message)
+        }
+
+        binding.btnReviewBack.setOnClickListener {
+            val intent = Intent(this, PageActivity::class.java)
+            startActivity(intent)
         }
     }
 
