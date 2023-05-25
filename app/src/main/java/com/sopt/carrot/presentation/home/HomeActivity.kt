@@ -9,7 +9,8 @@ import com.sopt.carrot.util.toast
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
-    private lateinit var adapterList: FullJobAdapter
+    private lateinit var adapter: TodayPopularityJobAdapter
+    private val viewModelPopularity by viewModels<TodayPopularityJobViewModel>()
     private val viewModelRecommended by viewModels<RecommendedViewModel>()
     private val viewModelList by viewModels<FullJobViewModel>()
 
@@ -20,6 +21,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
         observeRecommend()
         observeFull()
+        setTodayPopularityJobAdapter()
 
     }
 
@@ -27,15 +29,22 @@ class HomeActivity : AppCompatActivity() {
     private fun observeRecommend() {
         viewModelRecommended.getRecommendedJob(
             4L,
-            binding.rvHomeCard,
+            binding.rvHomeRecommend,
             message = { str -> toast(str) })
     }
 
     private fun observeFull() {
         viewModelList.getFullJob(
             4L,
-            binding.rvHomeList, message = { str -> toast(str) }
+            binding.rvHomeSelectList, message = { str -> toast(str) }
         )
+
+    }
+
+    private fun setTodayPopularityJobAdapter() {
+        adapter = TodayPopularityJobAdapter()
+        binding.rvHomeTodayPopularity.adapter = adapter
+        adapter.submitList(viewModelPopularity.mockTodayPopularityJobLists)
 
     }
 
