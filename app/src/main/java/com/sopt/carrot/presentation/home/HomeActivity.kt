@@ -20,23 +20,25 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        observeRecommend()
-        observeSelect()
-        observeFull()
+        setRecommendView()
+        setSelectView()
+        setFullView()
         setTodayPopularityJobAdapter()
         pressShuffleButton()
 
     }
 
 
-    private fun observeRecommend() {
+    //알바 추천 리스트 조회 서버 통신 함수
+    private fun setRecommendView() {
         viewModelRecommended.getRecommendedJob(
             jobDataCount,
             binding.rvHomeRecommend,
             message = { str -> toast(str) })
     }
 
-    private fun observeSelect() {
+    //알바 리스트 조회 서버 통신 함수(3개만 뽑아서)
+    private fun setSelectView() {
         viewModelList.getFullJob(
             jobDataCount,
             binding.rvHomeSelectList, message = { str -> toast(str) }, 1
@@ -44,7 +46,8 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
-    private fun observeFull() {
+    //알바 리스트 조회 서버 통신 함수(전체)
+    private fun setFullView() {
         viewModelList.getFullJob(
             jobDataCount,
             binding.rvHomeFull, message = { str -> toast(str) }, 2
@@ -53,6 +56,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
 
+    //오늘의 인기 알바 리사이클러뷰 어댑터 연결 함수
     private fun setTodayPopularityJobAdapter() {
         adapter = TodayPopularityJobAdapter()
         binding.rvHomeTodayPopularity.adapter = adapter
@@ -60,6 +64,7 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
+    //알바 추천 리스트 셔플 함수
     private fun pressShuffleButton() {
         binding.btnHomeShuffle.setOnClickListener {
             viewModelRecommended.shuffleRecommendedJob(

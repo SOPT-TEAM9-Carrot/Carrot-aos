@@ -30,6 +30,7 @@ class RecommendedViewModel : ViewModel() {
     }
 
 
+    //데이터 섞어서 불러오기(셔플)
     fun shuffleRecommendedJob(size: Long, recyclerView: RecyclerView, message: (String) -> Unit) {
         ApiPool.recommendService.getRecommendJobList(1, size).enqueueUtil(
             onSuccess = {
