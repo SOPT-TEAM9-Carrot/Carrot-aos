@@ -23,6 +23,8 @@ class ReviewActivity : AppCompatActivity() {
         binding.rcReviewReviews.addItemDecoration(CustomItemDecoration())
         binding.rcReviewReviews.adapter = reviewAdapter
 
+        viewModel.getReview(getUserIdFromPage())
+
         //아이템 개수에 따라 뷰전환
         viewModel.reviews.observe(this) { reviews ->
             if (reviews.isEmpty()) {
@@ -42,6 +44,10 @@ class ReviewActivity : AppCompatActivity() {
         viewModel.errorResult.observe(this) { errorResult ->
             makeToastMessage(errorResult.message)
         }
+    }
+
+    private fun getUserIdFromPage(): Long {
+        return 3L //임시 데이터 3
     }
 
     private fun makeToastMessage(string: String) {

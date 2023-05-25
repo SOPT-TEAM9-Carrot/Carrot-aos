@@ -7,9 +7,6 @@ import androidx.lifecycle.ViewModel
 import com.sopt.carrot.data.ApiPool
 import com.sopt.carrot.data.review.ResponseReviewDto
 import com.sopt.carrot.util.enqueueUtil
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class ReviewViewModel : ViewModel() {
 
@@ -22,13 +19,9 @@ class ReviewViewModel : ViewModel() {
     private val _errorResult: MutableLiveData<ResponseReviewDto> = MutableLiveData()
     val errorResult: LiveData<ResponseReviewDto> = _errorResult
 
-    init {
-        getReview()
-    }
-
-    fun getReview() {
+    fun getReview(userId: Long) {
         val reviewService = ApiPool.reviewService
-        reviewService.getReviewList().enqueueUtil(
+        reviewService.getReviewList(userId).enqueueUtil(
             onSuccess = { response ->
                 val data = response.data?.reviews
                 _reviews.value = data!!
