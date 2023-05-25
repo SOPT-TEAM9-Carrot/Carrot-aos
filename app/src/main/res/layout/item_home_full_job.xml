@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toStartOf="@id/iv_item_home_full_job_img"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/view_item_home_full_job_line"
-        tools:text="데이즈호텔 프론트" />
+        tools:text="@string/item_home_full_job_title" />
 
     <TextView
         android:id="@+id/tv_item_home_full_job_detail"
@@ -39,7 +39,7 @@
         android:layout_marginTop="3dp"
         android:drawableEnd="@drawable/ic_info"
         android:drawablePadding="7dp"
-        android:text="데이즈호텔명동 · 충무로1가 · 광고"
+        android:text="@string/item_home_full_job_detail"
         android:textAppearance="@style/TextAppearance.Carrot.body_medium_11"
         android:textColor="@color/color_sub_gray3"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="후기1"
+        android:text="@string/item_home_full_job_numbers_of_reviews"
         android:textAppearance="@style/TextAppearance.Carrot.sub_title_bold_12"
         android:textColor="@color/color_main1"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +67,7 @@
         android:background="@drawable/rectangle_gray7_radius_4"
         android:paddingHorizontal="8dp"
         android:paddingVertical="3dp"
-        android:text="연락을 잘해줘요"
+        android:text="@string/item_home_full_job_review_tag_1"
         android:textAppearance="@style/TextAppearance.Carrot.body_medium_11"
         android:textColor="@color/color_sub_gray2"
         app:layout_constraintStart_toEndOf="@id/tv_item_home_full_job_numbers_of_reviews"
@@ -82,7 +82,7 @@
         android:backgroundTint="@color/color_sub_blue2"
         android:paddingHorizontal="8dp"
         android:paddingVertical="3dp"
-        android:text="걸어서 10분"
+        android:text="@string/item_home_full_job_review_tag_2"
         android:textAppearance="@style/TextAppearance.Carrot.body_medium_11"
         android:textColor="@color/color_sub_blue1"
         app:layout_constraintStart_toEndOf="@id/tv_item_home_full_job_review_tag_1"
@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="5dp"
-        android:text="월~일 | 18:00~ 00:30 협의"
+        android:text="@string/item_home_full_job_period"
         android:textAppearance="@style/TextAppearance.Carrot.body_medium_14"
         android:textColor="@color/color_sub_gray4"
         app:layout_constraintStart_toStartOf="parent"
@@ -130,7 +130,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_item_home_full_job_img"
-        tools:text="시급 10,000원" />
+        tools:text="@string/item_home_full_job_salary" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
