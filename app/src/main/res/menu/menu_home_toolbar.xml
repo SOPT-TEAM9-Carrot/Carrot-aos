@@ -5,10 +5,12 @@
     <item
         android:icon="@drawable/ic_mypage"
         android:title="마이페이지"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        android:enabled="false"/>
     <item
         android:icon="@drawable/ic_writing"
         android:title="작성하기"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        android:enabled="false"/>
 
 </menu>
