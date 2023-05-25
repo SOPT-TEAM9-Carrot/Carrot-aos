@@ -5,19 +5,22 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.sopt.carrot.data.home.ResponseFullListDto
 import com.sopt.carrot.databinding.ItemHomeFullJobBinding
 
 class FullJobAdapter() :
-    ListAdapter<RecommendedJob, FullJobAdapter.JobAdapterViewHolder>(diffUtil) {
+    ListAdapter<ResponseFullListDto.Detail.Post, FullJobAdapter.JobAdapterViewHolder>(diffUtil) {
 
     class JobAdapterViewHolder(private val binding: ItemHomeFullJobBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun onBind(data: RecommendedJob) {
+        fun onBind(data: ResponseFullListDto.Detail.Post) {
             with(binding) {
-                ivItemHomeFullJobImg.setImageDrawable(root.context.getDrawable(data.image))
+                Glide.with(root).load(data.image).into(ivItemHomeFullJobImg)
                 tvItemHomeFullJobTitle.text = data.title
-                tvItemHomeFullJobTitle.text = data.salary
+                tvItemHomeFullJobTitle.text = data.title
+                tvItemHomeFullJobSalary.text = "시급 " + data.hourlyWage.toString() + "만원"
             }
 
         }
@@ -26,23 +29,25 @@ class FullJobAdapter() :
 
 
     companion object {
-        val diffUtil = object : DiffUtil.ItemCallback<RecommendedJob>() {
+        val diffUtil = object : DiffUtil.ItemCallback<ResponseFullListDto.Detail.Post>() {
             override fun areItemsTheSame(
-                oldItem: RecommendedJob,
-                newItem: RecommendedJob
+                oldItem: ResponseFullListDto.Detail.Post,
+                newItem: ResponseFullListDto.Detail.Post
             ): Boolean {
-                return oldItem.id == newItem.id
+                return oldItem.title == newItem.title
             }
 
             override fun areContentsTheSame(
-                oldItem: RecommendedJob,
-                newItem: RecommendedJob
+                oldItem: ResponseFullListDto.Detail.Post,
+                newItem: ResponseFullListDto.Detail.Post
             ): Boolean {
                 return oldItem == newItem
             }
 
         }
     }
+
+    override fun getItemCount(): Int = 3
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobAdapterViewHolder {
         val binding = ItemHomeFullJobBinding.inflate(
@@ -54,6 +59,6 @@ class FullJobAdapter() :
     }
 
     override fun onBindViewHolder(holder: JobAdapterViewHolder, position: Int) {
-        holder.onBind(currentList[position])
+        holder.onBind(getItem(position) as ResponseFullListDto.Detail.Post)
     }
 }

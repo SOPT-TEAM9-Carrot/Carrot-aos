@@ -18,23 +18,25 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setAdapter()
-        observe()
+        observeRecommend()
+        observeFull()
 
     }
 
-    private fun setAdapter() {
-        adapterList = FullJobAdapter()
-        binding.rvHomeList.adapter = adapterList
-        adapterList.submitList(viewModelList.mockListLists)
-    }
 
-
-    private fun observe() {
+    private fun observeRecommend() {
         viewModelRecommended.getRecommendedJob(
             4L,
             binding.rvHomeCard,
             message = { str -> toast(str) })
+    }
+
+    private fun observeFull() {
+        viewModelList.getFullJob(
+            4L,
+            binding.rvHomeList, message = { str -> toast(str) }
+        )
+
     }
 
 
