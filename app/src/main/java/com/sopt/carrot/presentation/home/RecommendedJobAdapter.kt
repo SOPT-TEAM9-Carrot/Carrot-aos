@@ -10,12 +10,12 @@ import com.sopt.carrot.data.home.ResponseRecommendDto
 import com.sopt.carrot.databinding.ItemHomeRecommendedJobBinding
 
 class RecommendedJobAdapter() :
-    ListAdapter<ResponseRecommendDto.Detail.Post, RecommendedJobAdapter.CardAdapterViewHolder>(
+    ListAdapter<ResponseRecommendDto.Detail.Post, RecommendedJobAdapter.RecommendedJobAdapterViewHolder>(
         diffUtil
     ) {
 
 
-    class CardAdapterViewHolder(private val binding: ItemHomeRecommendedJobBinding) :
+    class RecommendedJobAdapterViewHolder(private val binding: ItemHomeRecommendedJobBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(data: ResponseRecommendDto.Detail.Post) {
@@ -51,16 +51,16 @@ class RecommendedJobAdapter() :
 
     override fun getItemCount(): Int = 4
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardAdapterViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecommendedJobAdapterViewHolder {
         val binding = ItemHomeRecommendedJobBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
         )
-        return CardAdapterViewHolder(binding)
+        return RecommendedJobAdapterViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: CardAdapterViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RecommendedJobAdapterViewHolder, position: Int) {
         holder.onBind(getItem(position) as ResponseRecommendDto.Detail.Post)
     }
 
