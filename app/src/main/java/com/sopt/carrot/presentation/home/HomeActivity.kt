@@ -24,6 +24,7 @@ class HomeActivity : AppCompatActivity() {
         observeSelect()
         observeFull()
         setTodayPopularityJobAdapter()
+        pressShuffleButton()
 
     }
 
@@ -57,6 +58,16 @@ class HomeActivity : AppCompatActivity() {
         binding.rvHomeTodayPopularity.adapter = adapter
         adapter.submitList(viewModelPopularity.mockTodayPopularityJobLists)
 
+    }
+
+    private fun pressShuffleButton() {
+        binding.btnHomeShuffle.setOnClickListener {
+            viewModelRecommended.shuffleRecommendedJob(
+                jobDataCount,
+                binding.rvHomeRecommend,
+                message = { str -> toast(str) })
+
+        }
     }
 
 
