@@ -49,6 +49,8 @@ class RecommendedJobAdapter() :
         }
     }
 
+    override fun getItemCount(): Int = 4
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardAdapterViewHolder {
         val binding = ItemHomeRecommendedJobBinding.inflate(
             LayoutInflater.from(parent.context),
