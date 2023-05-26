@@ -1,5 +1,7 @@
 package com.sopt.carrot.presentation.home
 
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -9,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.sopt.carrot.R
 import com.sopt.carrot.data.home.ResponseRecommendDto
 import com.sopt.carrot.databinding.ItemHomeRecommendedJobBinding
+import com.sopt.carrot.presentation.page.PageActivity
 
 class RecommendedJobAdapter() :
     ListAdapter<ResponseRecommendDto.Detail.Post, RecommendedJobAdapter.RecommendedJobAdapterViewHolder>(
@@ -29,7 +32,16 @@ class RecommendedJobAdapter() :
                 tvItemHomeRecommendedJobSalary.text = "월급 " + data.monthlyWage.toString() + "만원"
             }
 
+            //아이템 클릭 리스너: 알바 상세페이지에 post id 넘겨주기
+            binding.root.setOnClickListener {
+                val intent = Intent(it.context, PageActivity::class.java)
+                intent.putExtra("postId", data.postId.toString())
+                Log.d("postId", data.postId.toString())
+
+            }
+
         }
+
 
     }
 
