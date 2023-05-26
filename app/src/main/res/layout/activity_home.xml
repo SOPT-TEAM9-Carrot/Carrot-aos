@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menu_home_toolbar"
         app:navigationIcon="@drawable/ic_x"
-        app:title="@string/home_title"
+        app:title="@string/home_tool_bar_title"
         app:titleTextAppearance="@style/TextAppearance.Carrot.title1_bold" />
 
 
