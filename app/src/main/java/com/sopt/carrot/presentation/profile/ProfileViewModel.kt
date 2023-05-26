@@ -39,6 +39,7 @@ class ProfileViewModel : ViewModel() {
         _isButtonEnabled.value = false
         selectedGender.value = 1
         introduction.value = ""
+        name.value = ""
         _isButtonEnabled.addSource(phoneNumberValidation) { validateForm() }
         _isButtonEnabled.addSource(birthYearValidation) { validateForm() }
     }
