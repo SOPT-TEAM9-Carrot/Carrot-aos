@@ -35,6 +35,12 @@ class ProfileViewModel : ViewModel() {
         }
     }
 
+    private val _applyResult: MutableLiveData<ResponseProfileDto> = MutableLiveData()
+    val applyResult: LiveData<ResponseProfileDto> = _applyResult
+
+    private val _errorResult: MutableLiveData<ResponseProfileDto> = MutableLiveData()
+    val errorResult: LiveData<ResponseProfileDto> = _errorResult
+
     init {
         _isButtonEnabled.value = false
         selectedGender.value = 1
@@ -76,8 +82,10 @@ class ProfileViewModel : ViewModel() {
                     response: Response<ResponseProfileDto>,
                 ) {
                     if (response.isSuccessful) {
+                        _applyResult.value = response.body()
                         Log.d("통신 성공", response.body()?.data.toString())
                     } else {
+                        _errorResult.value = response.body()
                         Log.d("통신 실패", response.errorBody()?.string() ?: "Unknown error")
                     }
                 }

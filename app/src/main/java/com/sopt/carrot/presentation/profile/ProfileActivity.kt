@@ -11,6 +11,8 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.sopt.carrot.R
 import com.sopt.carrot.databinding.ActivityProfileBinding
+import com.sopt.carrot.presentation.home.HomeActivity
+import com.sopt.carrot.util.toast
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -37,7 +39,11 @@ class ProfileActivity : AppCompatActivity() {
             btnProfileWoman.setTextColor(ContextCompat.getColor(applicationContext, R.color.white))
             btnProfileAgreeAndApply.isEnabled = false
         }
+        setupClickListeners()
+        observe()
+    }
 
+    private fun observe() {
         // introductionTextCount 업데이트
         viewModel.introductionTextCount.observe(this, { textCount ->
             binding.tvProfileIntroductionTextCount.text = textCount
@@ -48,10 +54,19 @@ class ProfileActivity : AppCompatActivity() {
             binding.btnProfileAgreeAndApply.isEnabled = isEnabled
         })
 
-        setupClickListeners()
+        // 통신성공시 뷰 전환
+        viewModel.applyResult.observe(this) {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 통신실패시 토스트 메세지
+        viewModel.errorResult.observe(this) { errorResult ->
+            this.toast(errorResult.message)
+        }
     }
 
-    private fun setupClickListeners() {
+    fun setupClickListeners() {
         with(binding) {
             // ivProfileImgLoad 터치 시 갤러리 열기
             ivProfileImgLoad.setOnClickListener {
