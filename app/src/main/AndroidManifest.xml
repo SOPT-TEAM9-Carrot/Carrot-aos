@@ -19,6 +19,9 @@
             android:name=".presentation.review.ReviewActivity"
             android:exported="true" />
         <activity
+            android:name=".presentation.profile.ProfileActivity"
+            android:exported="true" />
+        <activity
             android:name=".presentation.page.PageActivity"
             android:exported="true">
             <intent-filter>
