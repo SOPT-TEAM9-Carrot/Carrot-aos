@@ -58,39 +58,13 @@ class ProfileActivity : AppCompatActivity() {
                 openGallery()
             }
             btnProfileMan.setOnClickListener {
-                it.isSelected = true
-                btnProfileMan.setTextColor(
-                    ContextCompat.getColor(
-                        applicationContext,
-                        R.color.white
-                    )
-                )
-                btnProfileWoman.setTextColor(
-                    ContextCompat.getColor(
-                        applicationContext,
-                        R.color.color_sub_gray3
-                    )
-                )
-                btnProfileWoman.isSelected = false
-                viewModel?.selectedGender?.value = 0
+                selectGender(true)
             }
+
             btnProfileWoman.setOnClickListener {
-                it.isSelected = true
-                btnProfileWoman.setTextColor(
-                    ContextCompat.getColor(
-                        applicationContext,
-                        R.color.white
-                    )
-                )
-                btnProfileMan.setTextColor(
-                    ContextCompat.getColor(
-                        applicationContext,
-                        R.color.color_sub_gray3
-                    )
-                )
-                btnProfileMan.isSelected = false
-                viewModel?.selectedGender?.value = 1
+                selectGender(false)
             }
+
             ivProfileStopProfile.setOnClickListener {
                 val dialog = CustomPopupDialog(this@ProfileActivity)
                 dialog.show()
@@ -99,6 +73,27 @@ class ProfileActivity : AppCompatActivity() {
                 viewModel?.applyToServer()
             }
         }
+    }
+
+    private fun selectGender(isManSelected: Boolean) {
+        with(binding) {
+            btnProfileMan.isSelected = isManSelected
+            btnProfileWoman.isSelected = !isManSelected
+
+            btnProfileMan.setTextColor(
+                ContextCompat.getColor(
+                    applicationContext,
+                    if (isManSelected) R.color.white else R.color.color_sub_gray3
+                )
+            )
+            btnProfileWoman.setTextColor(
+                ContextCompat.getColor(
+                    applicationContext,
+                    if (isManSelected) R.color.color_sub_gray3 else R.color.white
+                )
+            )
+        }
+        viewModel?.selectedGender?.value = if (isManSelected) 0 else 1
     }
 
     // 갤러리 열기
