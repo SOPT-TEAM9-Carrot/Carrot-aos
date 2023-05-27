@@ -58,6 +58,7 @@ class ProfileActivity : AppCompatActivity() {
         // 통신성공시 뷰 전환
         viewModel.applyResult.observe(this) {
             val intent = Intent(this, HomeActivity::class.java)
+            intent.putExtra("check","1")
             startActivity(intent)
         }
 
