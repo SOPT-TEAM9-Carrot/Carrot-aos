@@ -11,6 +11,7 @@ data class PageResponse(
 ) {
     @Serializable
     data class Detail(
+        val userId: Long,
         val image: String,
         val categories: List<String>,
         val title: String,
