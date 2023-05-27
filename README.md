@@ -1,7 +1,7 @@
 # aos
 ## Result
-https://github.com/SOPT-TEAM9-Carrot/Carrot-aos/assets/88091704/dff24d49-5dc8-451c-82f8-8447dada0b1b
 
+https://www.notion.so/go-sopt/9-4571a239aacb440bb4674061202dac7b?pvs=4#c69d8e8692cf45898e32ef2d0abb7136
 
 
 ## Convention
