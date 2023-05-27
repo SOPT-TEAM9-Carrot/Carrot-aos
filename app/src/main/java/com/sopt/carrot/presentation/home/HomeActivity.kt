@@ -14,6 +14,7 @@ class HomeActivity : AppCompatActivity() {
     private val viewModelRecommended by viewModels<RecommendedViewModel>()
     private val viewModelList by viewModels<FullJobViewModel>()
     private val jobDataCount: Long = 8L
+    private lateinit var check: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +26,7 @@ class HomeActivity : AppCompatActivity() {
         setFullView()
         setTodayPopularityJobAdapter()
         pressShuffleButton()
-
+        setDialog()
     }
 
 
@@ -73,6 +74,18 @@ class HomeActivity : AppCompatActivity() {
                 message = { str -> toast(str) })
 
         }
+    }
+
+    //다이얼로그 띄우는 함수
+    private fun setDialog() {
+
+        check = intent.getStringExtra("check").toString()
+
+        if (check == "1") {
+            val dialog = CustomPopupHomeDialog(this@HomeActivity)
+            dialog.show()
+        }
+
     }
 
 
