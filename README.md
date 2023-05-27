@@ -1,4 +1,9 @@
 # aos
+## Result
+https://github.com/SOPT-TEAM9-Carrot/Carrot-aos/assets/88091704/dff24d49-5dc8-451c-82f8-8447dada0b1b
+
+
+
 ## Convention
 ### Branch
 도메인 단위로 브랜치를 구성합니다.
@@ -6,6 +11,8 @@
 main
 - feature/home `소현`
 - feature/page `대환`
+
+
 - feature/profile `재원`
 - feature/reviews `재원`
 
