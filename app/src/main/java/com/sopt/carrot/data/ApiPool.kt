@@ -1,6 +1,8 @@
 package com.sopt.carrot.data
 
 import com.sopt.carrot.BuildConfig.API_SERVER_URL
+import com.sopt.carrot.data.home.FullListService
+import com.sopt.carrot.data.home.RecommendService
 import com.sopt.carrot.data.page.PageService
 import com.sopt.carrot.data.profile.ProfileService
 import com.sopt.carrot.data.review.ReviewService
@@ -14,6 +16,8 @@ object ApiPool {
     val pageService = RetrofitPool.toApiServer.create(PageService::class.java)
     val reviewService = RetrofitPool.toApiServer.create(ReviewService::class.java)
     val profileService = RetrofitPool.toApiServer.create(ProfileService::class.java)
+    val fullListService = RetrofitPool.toApiServer.create(FullListService::class.java)
+    val recommendService = RetrofitPool.toApiServer.create(RecommendService::class.java)
 }
 
 object RetrofitPool {

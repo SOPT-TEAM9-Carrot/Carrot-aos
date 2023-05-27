@@ -7,6 +7,7 @@ import coil.load
 import coil.transform.CircleCropTransformation
 import com.sopt.carrot.data.review.ResponseReviewDto
 import com.sopt.carrot.databinding.ItemReviewBinding
+import com.sopt.carrot.util.StringUtils
 
 class ReviewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var itemList: List<ResponseReviewDto.Data.Review> = listOf()
