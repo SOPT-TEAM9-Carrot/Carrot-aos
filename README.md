@@ -1,8 +1,6 @@
 # aos
 ## Result
-
-https://www.notion.so/go-sopt/9-4571a239aacb440bb4674061202dac7b?pvs=4#c69d8e8692cf45898e32ef2d0abb7136
-
+https://www.notion.so/go-sopt/9-4571a239aacb440bb4674061202dac7b?pvs=4#fd08988da8194653a4d82fb3e4d5052a
 
 ## Convention
 ### Branch
