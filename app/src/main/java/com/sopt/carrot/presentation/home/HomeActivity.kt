@@ -15,7 +15,6 @@ class HomeActivity : AppCompatActivity() {
     private val viewModelList by viewModels<FullJobViewModel>()
     private val jobDataCount: Long = 8L
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -25,9 +24,7 @@ class HomeActivity : AppCompatActivity() {
         setFullView()
         setTodayPopularityJobAdapter()
         pressShuffleButton()
-
     }
-
 
     //알바 추천 리스트 조회 서버 통신 함수
     private fun setRecommendView() {

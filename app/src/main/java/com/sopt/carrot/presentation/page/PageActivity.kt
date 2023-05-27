@@ -1,14 +1,19 @@
 package com.sopt.carrot.presentation.page
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import coil.load
 import com.sopt.carrot.databinding.ActivityPageBinding
+import com.sopt.carrot.presentation.profile.ProfileActivity
+import com.sopt.carrot.presentation.review.ReviewActivity
 import com.sopt.carrot.presentation.review.adapter.ReviewAdapter
 
 class PageActivity : AppCompatActivity() {
+    var postId: Long = 0L
+    var userId: Long = 0L
     lateinit var binding: ActivityPageBinding
     private val viewModel: PageViewModel by viewModels()
     lateinit var reviewAdaptor: ReviewAdapter
@@ -18,13 +23,15 @@ class PageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityPageBinding.inflate(layoutInflater)
+        postId = intent.getStringExtra("postId")!!.toLong()
+        userId = intent.getStringExtra("userId")!!.toLong()
         setView()
         observe()
     }
 
     private fun setView() {
         setContentView(binding.root)
-        viewModel.getPageDetail(getPageIdFromHome(), logging = { str ->
+        viewModel.getPageDetail(postId, logging = { str ->
             Toast.makeText(
                 this,
                 "error ${str}",
@@ -34,15 +41,36 @@ class PageActivity : AppCompatActivity() {
 
         reviewAdaptor = ReviewAdapter()
         binding.rcPageReviews.adapter = reviewAdaptor
-        viewModel.getReviews { str ->
+        viewModel.getReviews(userId) { str ->
             Toast.makeText(
                 this,
                 "error ${str}",
                 Toast.LENGTH_SHORT
             ).show()
         }
+        reviewAdaptor.setOnClick(object : ReviewAdapter.OnClickListener {
+            override fun execute() {
+                val goto = Intent(this@PageActivity, ReviewActivity::class.java)
+                goto.putExtra("userId", userId)
+                goto.putExtra("postId", postId)
+                startActivity(goto)
+                finish()
+            }
+        })
+        binding.btnPageReviewMore.setOnClickListener {
+            val goto = Intent(this@PageActivity, ReviewActivity::class.java)
+            goto.putExtra("userId", userId)
+            goto.putExtra("postId", postId)
+            startActivity(goto)
+            finish()
+        }
 
         viewModel.getAlba(binding.rcPageAlbas)
+
+        binding.btnPageApply.setOnClickListener {
+            startActivity(Intent(this@PageActivity, ProfileActivity::class.java))
+            finish()
+        }
     }
 
     private fun observe() {
@@ -62,7 +90,4 @@ class PageActivity : AppCompatActivity() {
         }
     }
 
-    private fun getPageIdFromHome(): Long {
-        return 1L
-    }
 }

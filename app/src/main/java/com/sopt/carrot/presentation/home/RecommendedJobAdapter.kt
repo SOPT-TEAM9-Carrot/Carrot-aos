@@ -1,7 +1,6 @@
 package com.sopt.carrot.presentation.home
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -17,9 +16,9 @@ class RecommendedJobAdapter() :
     ListAdapter<ResponseRecommendDto.Detail.Post, RecommendedJobAdapter.RecommendedJobAdapterViewHolder>(
         diffUtil
     ) {
+    lateinit var goto: Intent
 
-
-    class RecommendedJobAdapterViewHolder(private val binding: ItemHomeRecommendedJobBinding) :
+    inner class RecommendedJobAdapterViewHolder(private val binding: ItemHomeRecommendedJobBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(data: ResponseRecommendDto.Detail.Post) {
@@ -36,10 +35,10 @@ class RecommendedJobAdapter() :
             binding.root.setOnClickListener {
                 val intent = Intent(it.context, PageActivity::class.java)
                 intent.putExtra("postId", data.postId.toString())
-                Log.d("postId", data.postId.toString())
+                intent.putExtra("userId", data.userId.toString())
 
+                it.context.startActivity(intent)
             }
-
         }
 
 
@@ -82,6 +81,4 @@ class RecommendedJobAdapter() :
     override fun onBindViewHolder(holder: RecommendedJobAdapterViewHolder, position: Int) {
         holder.onBind(getItem(position) as ResponseRecommendDto.Detail.Post)
     }
-
-
 }

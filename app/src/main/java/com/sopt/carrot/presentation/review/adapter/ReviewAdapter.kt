@@ -7,12 +7,12 @@ import coil.load
 import coil.transform.CircleCropTransformation
 import com.sopt.carrot.data.review.ResponseReviewDto
 import com.sopt.carrot.databinding.ItemReviewBinding
-import com.sopt.carrot.util.StringUtils
 
 class ReviewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    var onCLick: OnClickListener? = null
     private var itemList: List<ResponseReviewDto.Data.Review> = listOf()
 
-    class ReviewViewHolder(
+    inner class ReviewViewHolder(
         private val binding: ItemReviewBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(itemList: ResponseReviewDto.Data.Review) {
@@ -22,8 +22,22 @@ class ReviewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 imgReivewProfile.load(itemList.imageUrl) {
                     transformations(CircleCropTransformation())
                 }
+
+            }
+
+            //아이템 클릭 리스너: 알바 상세페이지에 post id 넘겨주기
+            binding.root.setOnClickListener {
+                onCLick?.execute()
             }
         }
+    }
+
+    fun setOnClick(click: OnClickListener) {
+        this.onCLick = click
+    }
+
+    interface OnClickListener {
+        fun execute()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {

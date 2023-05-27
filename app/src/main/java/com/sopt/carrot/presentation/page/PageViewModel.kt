@@ -39,8 +39,8 @@ class PageViewModel : ViewModel() {
         })
     }
 
-    internal fun getReviews(logging: (String) -> Unit) {
-        ApiPool.reviewService.getReviewList(getUserId())
+    internal fun getReviews(userId : Long, logging: (String) -> Unit) {
+        ApiPool.reviewService.getReviewList(userId)
             .enqueue(object : Callback<ResponseReviewDto> {
                 override fun onResponse(
                     call: Call<ResponseReviewDto>,
@@ -67,6 +67,4 @@ class PageViewModel : ViewModel() {
             }
         )
     }
-
-    internal fun getUserId() = 1L
 }

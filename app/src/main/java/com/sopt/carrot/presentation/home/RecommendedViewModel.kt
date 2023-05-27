@@ -19,16 +19,12 @@ class RecommendedViewModel : ViewModel() {
                 _recommendedJobResponse.value = it
                 recyclerView.adapter = RecommendedJobAdapter().apply { submitList(it.data.posts) }
                 message.invoke(it.message)
-
             },
             onError = {
                 message.invoke("error:${it}")
             }
         )
-
-
     }
-
 
     //데이터 섞어서 불러오기(셔플)
     fun shuffleRecommendedJob(size: Long, recyclerView: RecyclerView, message: (String) -> Unit) {
